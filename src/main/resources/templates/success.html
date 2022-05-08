@@ -62,8 +62,10 @@ i {
 			style="border-radius: 200px; height: 200px; width: 200px; background: #F8FAF5; margin: 0 auto;">
 			<i class="checkmark">✓</i>
 		</div>
-		<h1>Success</h1>
-		<p th:text="'Welcome ' + ${greeting.firstName}" />
+<!-- 		<h1>Success</h1>
+ -->		<p th:text="'Login Successfully '" /> <br>
+ <b><p th:text="${greeting.firstName}" />
+ </b>
 	</div>
 </body>
 </html>
