@@ -2,6 +2,7 @@ Refer -
 https://codelabs.developers.google.com/codelabs/cloud-app-engine-springboot#0
 
 repository check out - git clone https://github.com/projects-demo/appengine-demo/
+cd appengine-demo/
 Build - mvn clean install
 locally run - mvn spring-boot:run
 run on App engine - mvn package appengine:deploy
