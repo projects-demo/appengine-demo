@@ -24,12 +24,11 @@ import com.demo.model.UserEntity;
 import com.demo.service.EmployeeService;
 
 @Controller
-@RequestMapping(value = { "employees", "/", "welcome" })
 public class EmployeeController {
 	@Autowired
 	EmployeeService service;
 
-	@GetMapping
+	@RequestMapping(value = { "employees", "welcome" })
 	public ResponseEntity<List<EmployeeEntity>> getAllEmployees() {
 		List<EmployeeEntity> list = service.getAllEmployees();
 
@@ -56,7 +55,7 @@ public class EmployeeController {
 		return HttpStatus.FORBIDDEN;
 	}
 
-	@RequestMapping(value = "/login", method = RequestMethod.GET)
+	@RequestMapping(value = { "login", "/"}, method = RequestMethod.GET)
 	public String login(Model model) {
 		model.addAttribute("employeeent", new UserEntity());
 		return "login";
@@ -68,7 +67,7 @@ public class EmployeeController {
 		List<UserEntity> empList = service.getEmployee(employee.getFirstName(), employee.getPassword());
         if(CollectionUtils.isNotEmpty(empList)) {
 			model.addAttribute("greeting", empList.get(0));
-			return "result2";
+			return "success";
 		} else
 			return "fail";
 	}
